@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harsh — Software Developer, e-Governance &amp; Enterprise Systems</title>
+<meta name="description" content="Harsh — Software Developer with 10+ years building e-Governance, transport, and enterprise applications for Central and State Government organizations across India.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+  :root{
+    --bg:        #0B1929;
+    --panel:     #11233A;
+    --panel-2:   #16263B;
+    --line:      #233A56;
+    --ink:       #EDEFF2;
+    --ink-dim:   #9FB1C7;
+    --ink-faint: #6A7F99;
+    --amber:     #E8A33D;
+    --teal:      #4FA8A0;
+    --radius:    10px;
+  }
+
+  *{margin:0; padding:0; box-sizing:border-box;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter', sans-serif;
+    line-height:1.6;
+    font-size:16px;
+  }
+
+  h1,h2,h3,h4{
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:600;
+    letter-spacing:-0.01em;
+    color:var(--ink);
+  }
+
+  .mono{
+    font-family:'JetBrains Mono', monospace;
+  }
+
+  a{color:var(--amber); text-decoration:none;}
+  a:hover{text-decoration:underline;}
+
+  .wrap{
+    max-width:1100px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+
+  /* ---------- Header / Nav ---------- */
+  header{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:rgba(11,25,41,0.9);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    height:64px;
+  }
+  .brand{
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:700;
+    font-size:1.25rem;
+    color:var(--ink);
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .brand .dot{
+    width:8px; height:8px; border-radius:50%;
+    background:var(--teal);
+    box-shadow:0 0 0 3px rgba(79,168,160,0.15);
+    display:inline-block;
+  }
+  .nav-links{
+    display:flex;
+    gap:28px;
+    list-style:none;
+    font-size:0.9rem;
+  }
+  .nav-links a{
+    color:var(--ink-dim);
+    font-weight:500;
+    transition:color .15s;
+  }
+  .nav-links a:hover{color:var(--ink); text-decoration:none;}
+  .nav-toggle{
+    display:none;
+    background:none; border:none; color:var(--ink);
+    font-size:1.4rem; cursor:pointer;
+  }
+
+  @media (max-width:760px){
+    .nav-links{
+      position:absolute;
+      top:64px; left:0; right:0;
+      background:var(--panel);
+      border-bottom:1px solid var(--line);
+      flex-direction:column;
+      padding:16px 24px;
+      gap:16px;
+      display:none;
+    }
+    .nav-links.open{display:flex;}
+    .nav-toggle{display:block;}
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    padding:80px 0 60px;
+    border-bottom:1px solid var(--line);
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.3fr 1fr;
+    gap:48px;
+    align-items:start;
+  }
+  @media (max-width:860px){
+    .hero-grid{grid-template-columns:1fr;}
+  }
+
+  .eyebrow{
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.8rem;
+    color:var(--teal);
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    margin-bottom:18px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:24px; height:1px;
+    background:var(--teal);
+    display:inline-block;
+  }
+
+  .hero h1{
+    font-size:clamp(2.2rem, 5vw, 3.4rem);
+    line-height:1.1;
+    margin-bottom:20px;
+  }
+  .hero h1 span{
+    color:var(--amber);
+  }
+  .hero p.lead{
+    font-size:1.05rem;
+    color:var(--ink-dim);
+    max-width:540px;
+    margin-bottom:28px;
+  }
+  .hero-cta{
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+  }
+  .btn{
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.85rem;
+    padding:12px 22px;
+    border-radius:6px;
+    border:1px solid var(--line);
+    color:var(--ink);
+    font-weight:500;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    transition:border-color .15s, background .15s;
+  }
+  .btn:hover{
+    border-color:var(--amber);
+    text-decoration:none;
+    background:rgba(232,163,61,0.06);
+  }
+  .btn.primary{
+    background:var(--amber);
+    color:#0B1929;
+    border-color:var(--amber);
+    font-weight:600;
+  }
+  .btn.primary:hover{
+    background:#f0b259;
+  }
+
+  /* ---------- Live systems panel (signature element) ---------- */
+  .ops-panel{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    overflow:hidden;
+  }
+  .ops-header{
+    padding:14px 18px;
+    border-bottom:1px solid var(--line);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.75rem;
+    color:var(--ink-faint);
+    text-transform:uppercase;
+    letter-spacing:0.1em;
+  }
+  .ops-header .live{
+    display:flex; align-items:center; gap:6px;
+    color:var(--teal);
+  }
+  .ops-header .live .pulse{
+    width:7px; height:7px; border-radius:50%;
+    background:var(--teal);
+    animation:pulse 2s infinite;
+  }
+  @keyframes pulse{
+    0%,100%{opacity:1; box-shadow:0 0 0 0 rgba(79,168,160,0.5);}
+    50%{opacity:0.7; box-shadow:0 0 0 4px rgba(79,168,160,0);}
+  }
+  .ops-list{
+    list-style:none;
+  }
+  .ops-list li{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    padding:13px 18px;
+    border-bottom:1px solid var(--line);
+    font-size:0.85rem;
+  }
+  .ops-list li:last-child{border-bottom:none;}
+  .ops-name{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:var(--ink);
+    font-weight:500;
+  }
+  .ops-name .status-dot{
+    width:8px; height:8px; border-radius:50%;
+    background:var(--teal);
+    flex-shrink:0;
+  }
+  .ops-meta{
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.75rem;
+    color:var(--ink-faint);
+    text-align:right;
+  }
+  .ops-meta .tag{
+    color:var(--amber);
+  }
+
+  /* ---------- Section scaffolding ---------- */
+  section{
+    padding:64px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .section-head{
+    display:flex;
+    align-items:baseline;
+    gap:16px;
+    margin-bottom:36px;
+    flex-wrap:wrap;
+  }
+  .section-num{
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.85rem;
+    color:var(--amber);
+  }
+  .section-head h2{
+    font-size:1.7rem;
+  }
+  .section-sub{
+    color:var(--ink-dim);
+    font-size:0.95rem;
+    max-width:680px;
+    margin-top:8px;
+  }
+
+  /* ---------- About ---------- */
+  .about-grid{
+    display:grid;
+    grid-template-columns:1fr 280px;
+    gap:48px;
+  }
+  @media (max-width:860px){
+    .about-grid{grid-template-columns:1fr;}
+  }
+  .about-grid p{
+    color:var(--ink-dim);
+    margin-bottom:16px;
+  }
+  .about-grid p strong{color:var(--ink); font-weight:600;}
+
+  .info-card{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:20px;
+  }
+  .info-row{
+    display:flex;
+    justify-content:space-between;
+    padding:10px 0;
+    border-bottom:1px solid var(--line);
+    font-size:0.85rem;
+    gap:12px;
+  }
+  .info-row:last-child{border-bottom:none;}
+  .info-row .k{color:var(--ink-faint); font-family:'JetBrains Mono', monospace; font-size:0.78rem;}
+  .info-row .v{color:var(--ink); font-weight:500; text-align:right;}
+
+  /* ---------- Stats ---------- */
+  .stats-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    overflow:hidden;
+  }
+  @media (max-width:760px){
+    .stats-grid{grid-template-columns:repeat(2,1fr);}
+  }
+  .stat{
+    background:var(--panel);
+    padding:28px 22px;
+  }
+  .stat .num{
+    font-family:'Space Grotesk', sans-serif;
+    font-size:2.4rem;
+    font-weight:700;
+    color:var(--amber);
+    line-height:1;
+    margin-bottom:8px;
+  }
+  .stat .label{
+    font-size:0.85rem;
+    color:var(--ink-dim);
+  }
+
+  /* ---------- Skills ---------- */
+  .skills-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:32px 48px;
+  }
+  @media (max-width:760px){
+    .skills-grid{grid-template-columns:1fr;}
+  }
+  .skill-row{
+    margin-bottom:20px;
+  }
+  .skill-row:last-child{margin-bottom:0;}
+  .skill-top{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:8px;
+    font-size:0.9rem;
+  }
+  .skill-top .pct{
+    font-family:'JetBrains Mono', monospace;
+    color:var(--ink-faint);
+    font-size:0.8rem;
+  }
+  .bar{
+    height:5px;
+    background:var(--panel-2);
+    border:1px solid var(--line);
+    border-radius:3px;
+    overflow:hidden;
+  }
+  .bar-fill{
+    height:100%;
+    background:var(--teal);
+    border-radius:3px;
+  }
+
+  /* ---------- Tech tags ---------- */
+  .tag-cloud{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-top:36px;
+  }
+  .tag-cloud span{
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.78rem;
+    color:var(--ink-dim);
+    border:1px solid var(--line);
+    padding:6px 12px;
+    border-radius:5px;
+  }
+
+  /* ---------- Experience (timeline) ---------- */
+  .timeline{
+    position:relative;
+    padding-left:28px;
+    border-left:1px solid var(--line);
+  }
+  .tl-item{
+    position:relative;
+    padding-bottom:44px;
+  }
+  .tl-item:last-child{padding-bottom:0;}
+  .tl-item::before{
+    content:"";
+    position:absolute;
+    left:-33px;
+    top:4px;
+    width:10px; height:10px;
+    border-radius:50%;
+    background:var(--bg);
+    border:2px solid var(--amber);
+  }
+  .tl-item.current::before{
+    background:var(--amber);
+  }
+  .tl-period{
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.78rem;
+    color:var(--amber);
+    margin-bottom:6px;
+    display:block;
+  }
+  .tl-item h3{
+    font-size:1.1rem;
+    margin-bottom:2px;
+  }
+  .tl-org{
+    color:var(--ink-dim);
+    font-size:0.9rem;
+    margin-bottom:12px;
+    font-style:italic;
+  }
+  .tl-item ul{
+    list-style:none;
+    color:var(--ink-dim);
+    font-size:0.9rem;
+  }
+  .tl-item ul li{
+    padding-left:18px;
+    position:relative;
+    margin-bottom:6px;
+  }
+  .tl-item ul li::before{
+    content:"›";
+    position:absolute;
+    left:0;
+    color:var(--teal);
+    font-weight:700;
+  }
+
+  /* ---------- Education ---------- */
+  .edu-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+  }
+  @media (max-width:760px){
+    .edu-grid{grid-template-columns:1fr;}
+  }
+  .edu-card{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:20px;
+  }
+  .edu-card .yr{
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.78rem;
+    color:var(--teal);
+    margin-bottom:8px;
+    display:block;
+  }
+  .edu-card h4{
+    font-size:1rem;
+    margin-bottom:6px;
+  }
+  .edu-card p{
+    font-size:0.85rem;
+    color:var(--ink-dim);
+  }
+
+  /* ---------- Projects ---------- */
+  .project-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+  }
+  @media (max-width:760px){
+    .project-grid{grid-template-columns:1fr;}
+  }
+  .project-card{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:24px;
+    transition:border-color .15s;
+  }
+  .project-card:hover{
+    border-color:var(--teal);
+  }
+  .project-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    margin-bottom:12px;
+    gap:12px;
+  }
+  .project-card h3{
+    font-size:1.05rem;
+  }
+  .project-tag{
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.7rem;
+    color:var(--amber);
+    border:1px solid var(--line);
+    padding:3px 8px;
+    border-radius:4px;
+    white-space:nowrap;
+    flex-shrink:0;
+  }
+  .project-card .client{
+    font-size:0.8rem;
+    color:var(--ink-faint);
+    margin-bottom:10px;
+    font-family:'JetBrains Mono', monospace;
+  }
+  .project-card p.desc{
+    color:var(--ink-dim);
+    font-size:0.9rem;
+    margin-bottom:14px;
+  }
+  .project-card .tech{
+    font-size:0.78rem;
+    color:var(--ink-faint);
+    border-top:1px solid var(--line);
+    padding-top:12px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:12px;
+  }
+  .project-card .tech a{
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.78rem;
+    flex-shrink:0;
+  }
+
+  .project-grid.more{
+    grid-template-columns:repeat(3,1fr);
+    margin-top:20px;
+  }
+  @media (max-width:760px){
+    .project-grid.more{grid-template-columns:1fr;}
+  }
+  .project-mini{
+    background:var(--panel-2);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:16px 18px;
+    font-size:0.85rem;
+  }
+  .project-mini strong{
+    display:block;
+    color:var(--ink);
+    margin-bottom:4px;
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:600;
+  }
+  .project-mini span{
+    color:var(--ink-faint);
+    font-size:0.78rem;
+    font-family:'JetBrains Mono', monospace;
+  }
+
+  /* ---------- Contact ---------- */
+  .contact-section{
+    border-bottom:none;
+    padding-bottom:0;
+  }
+  .contact-grid{
+    display:grid;
+    grid-template-columns:1.2fr 1fr;
+    gap:48px;
+    align-items:center;
+    padding-bottom:64px;
+  }
+  @media (max-width:860px){
+    .contact-grid{grid-template-columns:1fr;}
+  }
+  .contact-grid h2{
+    font-size:2rem;
+    margin-bottom:16px;
+  }
+  .contact-grid p{
+    color:var(--ink-dim);
+    margin-bottom:28px;
+    max-width:440px;
+  }
+  .contact-links{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+  .contact-links a{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    color:var(--ink);
+    font-weight:500;
+    font-size:0.95rem;
+  }
+  .contact-links a:hover{text-decoration:none; color:var(--amber);}
+  .contact-links i{
+    width:36px; height:36px;
+    border:1px solid var(--line);
+    border-radius:8px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--teal);
+    flex-shrink:0;
+  }
+
+  .contact-card{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:28px;
+  }
+  .contact-card .row{
+    display:flex;
+    justify-content:space-between;
+    padding:12px 0;
+    border-bottom:1px solid var(--line);
+    font-size:0.9rem;
+  }
+  .contact-card .row:last-child{border-bottom:none;}
+  .contact-card .row .k{color:var(--ink-faint); font-family:'JetBrains Mono', monospace; font-size:0.78rem;}
+  .contact-card .row .v{color:var(--ink); font-weight:500;}
+  .contact-card .v.available{color:var(--teal);}
+
+  footer{
+    padding:24px 0;
+    text-align:center;
+    font-size:0.8rem;
+    color:var(--ink-faint);
+    font-family:'JetBrains Mono', monospace;
+  }
+
+  /* ---------- Reveal on scroll ---------- */
+  .reveal{
+    opacity:0;
+    transform:translateY(16px);
+    transition:opacity .6s ease, transform .6s ease;
+  }
+  .reveal.in{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    .reveal{opacity:1; transform:none; transition:none;}
+    .ops-header .pulse{animation:none;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="brand"><span class="dot"></span> Harsh</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><i class="fas fa-bars"></i></button>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">Software developer · e-Governance &amp; enterprise systems</div>
+        <h1>Building the systems that <span>run government services</span>, quietly and at scale.</h1>
+        <p class="lead">10+ years designing and maintaining transport, governance, and citizen-service platforms used by hundreds of thousands of people across nine Indian states — currently contracted under the National Informatics Centre (NIC).</p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn primary"><i class="fas fa-server"></i> View deployed systems</a>
+          <a href="#contact" class="btn"><i class="fas fa-envelope"></i> Get in touch</a>
+        </div>
+      </div>
+
+      <div class="ops-panel reveal">
+        <div class="ops-header">
+          <span>Production systems</span>
+          <span class="live"><span class="pulse"></span> live</span>
+        </div>
+        <ul class="ops-list">
+          <li>
+            <span class="ops-name"><span class="status-dot"></span> UTC Online</span>
+            <span class="ops-meta">Uttarakhand <span class="tag">·</span> transport</span>
+          </li>
+          <li>
+            <span class="ops-name"><span class="status-dot"></span> APSTS Online</span>
+            <span class="ops-meta">Arunachal Pradesh <span class="tag">·</span> ETM</span>
+          </li>
+          <li>
+            <span class="ops-name"><span class="status-dot"></span> STEMS</span>
+            <span class="ops-meta">Meghalaya <span class="tag">·</span> GPS</span>
+          </li>
+          <li>
+            <span class="ops-name"><span class="status-dot"></span> e-Cabinet</span>
+            <span class="ops-meta">5 states <span class="tag">·</span> workflow</span>
+          </li>
+          <li>
+            <span class="ops-name"><span class="status-dot"></span> BKTC Portal</span>
+            <span class="ops-meta">Uttarakhand <span class="tag">·</span> pilgrimage</span>
+          </li>
+          <li>
+            <span class="ops-name"><span class="status-dot"></span> Rajaji Tiger Reserve</span>
+            <span class="ops-meta">Uttarakhand <span class="tag">·</span> tourism</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="section-num">01</span>
+        <h2>About</h2>
+      </div>
+      <div class="about-grid">
+        <div class="reveal">
+          <p>I'm a software developer with <strong>10+ years of professional experience</strong> in web development, with a strong focus on ASP.NET technologies using both C# and VB.NET. My work spans Web Forms, ASP.NET MVC, and ASP.NET Core, along with RESTful services built on ASP.NET Web API.</p>
+          <p>Most of my career has centred on <strong>online ticket booking and citizen-service systems</strong> — platforms that need real-time availability, secure transactions, and high concurrency. I've worked deeply with Oracle, SQL Server, and PostgreSQL, from schema design through performance tuning of high-volume operations.</p>
+          <p>On the front end, I build responsive interfaces with <strong>React</strong>, integrating closely with .NET-based APIs to keep complex client interactions smooth. Currently, I work as a contractual developer under the <strong>National Informatics Centre (NIC)</strong> through Nippon Data Systems Ltd., contributing to mission-critical digital governance initiatives across Central and State Government organizations.</p>
+          <p>I care about shipping <strong>scalable, maintainable, and efficient</strong> solutions — whether that's integrating modern APIs or migrating legacy systems to .NET Core.</p>
+        </div>
+        <div class="info-card reveal">
+          <div class="info-row"><span class="k">LOCATION</span><span class="v">Dehradun, Uttarakhand</span></div>
+          <div class="info-row"><span class="k">PHONE</span><span class="v">8791636315</span></div>
+          <div class="info-row"><span class="k">EMAIL</span><span class="v">harshgarcha0@gmail.com</span></div>
+          <div class="info-row"><span class="k">EXPERIENCE</span><span class="v">10+ years</span></div>
+          <div class="info-row"><span class="k">CURRENT ROLE</span><span class="v">Software Developer, NIC (via Nippon Data Systems)</span></div>
+          <div class="info-row"><span class="k">DEGREE</span><span class="v">M.Sc. Computer Science</span></div>
+          <div class="info-row"><span class="k">STATES SERVED</span><span class="v">9 across India</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section>
+    <div class="wrap">
+      <div class="stats-grid reveal">
+        <div class="stat">
+          <div class="num">10+</div>
+          <div class="label">Years of experience</div>
+        </div>
+        <div class="stat">
+          <div class="num">9</div>
+          <div class="label">Major government projects</div>
+        </div>
+        <div class="stat">
+          <div class="num">9</div>
+          <div class="label">States served across India</div>
+        </div>
+        <div class="stat">
+          <div class="num">4</div>
+          <div class="label">Companies / employers</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="section-num">02</span>
+        <h2>Skills</h2>
+      </div>
+      <div class="section-sub reveal">Core technical strengths built across a decade of enterprise and e-Governance software development.</div>
+
+      <div class="skills-grid" style="margin-top:36px;">
+        <div class="reveal">
+          <div class="skill-row">
+            <div class="skill-top"><span>C# / ASP.NET</span><span class="pct mono">EXPERT</span></div>
+            <div class="bar"><div class="bar-fill" style="width:95%"></div></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-top"><span>VB.NET</span><span class="pct mono">EXPERT</span></div>
+            <div class="bar"><div class="bar-fill" style="width:90%"></div></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-top"><span>SQL Server / Oracle / PostgreSQL</span><span class="pct mono">EXPERT</span></div>
+            <div class="bar"><div class="bar-fill" style="width:90%"></div></div>
+          </div>
+        </div>
+        <div class="reveal">
+          <div class="skill-row">
+            <div class="skill-top"><span>REST APIs &amp; Web Services</span><span class="pct mono">EXPERT</span></div>
+            <div class="bar"><div class="bar-fill" style="width:90%"></div></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-top"><span>HTML, CSS &amp; Bootstrap</span><span class="pct mono">ADVANCED</span></div>
+            <div class="bar"><div class="bar-fill" style="width:88%"></div></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-top"><span>React / JavaScript</span><span class="pct mono">PROFICIENT</span></div>
+            <div class="bar"><div class="bar-fill" style="width:78%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tag-cloud reveal">
+        <span>ASP.NET Web Forms</span>
+        <span>ASP.NET MVC</span>
+        <span>ASP.NET Core</span>
+        <span>ADO.NET</span>
+        <span>jQuery</span>
+        <span>AJAX</span>
+        <span>JSON</span>
+        <span>Payment Gateway Integration</span>
+        <span>SMS Gateway Integration</span>
+        <span>Role-Based Access Control</span>
+        <span>NAPIX (NIC API Exchange)</span>
+        <span>ETM Integration</span>
+        <span>GPS Tracking</span>
+        <span>Android Development</span>
+        <span>Node.js / Next.js</span>
+        <span>IIS Deployment</span>
+        <span>Postman</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="section-num">03</span>
+        <h2>Professional experience</h2>
+      </div>
+
+      <div class="timeline reveal">
+        <div class="tl-item current">
+          <span class="tl-period">SEP 2021 — PRESENT</span>
+          <h3>Software Developer</h3>
+          <div class="tl-org">Nippon Data Systems Ltd. — Contractual, under NIC</div>
+          <ul>
+            <li>Design, develop, and maintain enterprise-grade e-Governance applications for various State Government departments</li>
+            <li>Develop citizen-centric service portals, workflow automation systems, and transport management solutions</li>
+            <li>Integrate third-party services including payment gateways, SMS gateways, and external REST APIs</li>
+            <li>Optimize database performance through stored procedures, indexing, and query tuning</li>
+            <li>Provide technical support, production deployments, bug fixes, and application enhancements</li>
+          </ul>
+        </div>
+
+        <div class="tl-item">
+          <span class="tl-period">FEB 2020 — AUG 2021</span>
+          <h3>Software Developer</h3>
+          <div class="tl-org">Velocis Systems Pvt. Ltd.</div>
+          <ul>
+            <li>Developed and maintained web-based government applications and online service portals</li>
+            <li>Created responsive user interfaces and backend modules for citizen services</li>
+            <li>Implemented database-driven business workflows and reporting systems</li>
+            <li>Participated in application deployment and post-production support activities</li>
+          </ul>
+        </div>
+
+        <div class="tl-item">
+          <span class="tl-period">AUG 2016 — JAN 2020</span>
+          <h3>Software Developer</h3>
+          <div class="tl-org">SISL Infotech Pvt. Ltd.</div>
+          <ul>
+            <li>Developed transport management and citizen service applications</li>
+            <li>Designed database structures and optimized SQL queries for high-volume operations</li>
+            <li>Developed APIs and web services for system integrations</li>
+            <li>Managed application maintenance, enhancements, and performance improvements</li>
+          </ul>
+        </div>
+
+        <div class="tl-item">
+          <span class="tl-period">DEC 2015 — AUG 2016</span>
+          <h3>Software Developer</h3>
+          <div class="tl-org">PC Technology Pvt. Ltd.</div>
+          <ul>
+            <li>Developed web applications using ASP.NET and SQL Server</li>
+            <li>Implemented business logic modules and database operations</li>
+            <li>Assisted in software testing and deployment activities</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section>
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="section-num">04</span>
+        <h2>Education</h2>
+      </div>
+      <div class="edu-grid reveal">
+        <div class="edu-card">
+          <span class="yr">2013 — 2015</span>
+          <h4>M.Sc. Computer Science</h4>
+          <p>Shobhit University, Meerut, Uttar Pradesh</p>
+        </div>
+        <div class="edu-card">
+          <span class="yr">2010 — 2013</span>
+          <h4>B.Sc. Computer Science</h4>
+          <p>Meerut College, Meerut, Uttar Pradesh</p>
+        </div>
+        <div class="edu-card">
+          <span class="yr">2010</span>
+          <h4>Intermediate</h4>
+          <p>S.D. Inter College, Muzaffarnagar, Uttar Pradesh</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="section-num">05</span>
+        <h2>Key projects</h2>
+      </div>
+      <div class="section-sub reveal">A selection of large-scale platforms delivered for Central and State Government organizations — most still in active production.</div>
+
+      <div class="project-grid" style="margin-top:36px;">
+        <div class="project-card reveal">
+          <div class="project-top">
+            <h3>UTC Online</h3>
+            <span class="project-tag">Transport</span>
+          </div>
+          <div class="client">Uttarakhand Transport Corporation</div>
+          <p class="desc">Large-scale online bus reservation and passenger service platform — seat booking, cancellation, PNR enquiry, automated refunds with reverse payment-gateway transactions, and bus pass management for public, staff, and government users.</p>
+          <div class="tech">
+            <span>ASP.NET · Oracle · JavaScript</span>
+            <a href="https://utconline.uk.gov.in" target="_blank" rel="noopener">utconline.uk.gov.in <i class="fas fa-arrow-up-right-from-square"></i></a>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-top">
+            <h3>APSTS Online</h3>
+            <span class="project-tag">Transport</span>
+          </div>
+          <div class="client">Arunachal Pradesh State Transport Services</div>
+          <p class="desc">State-wide bus reservation system with route search, e-ticketing, and refunds — plus ETM integration for offline onboard ticketing that syncs to the central server on reconnection, and GPS-enabled live bus tracking.</p>
+          <div class="tech">
+            <span>ASP.NET · Oracle · ETM</span>
+            <a href="https://apsts.arunachal.gov.in/" target="_blank" rel="noopener">apsts.arunachal.gov.in <i class="fas fa-arrow-up-right-from-square"></i></a>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-top">
+            <h3>e-Cabinet</h3>
+            <span class="project-tag">e-Governance</span>
+          </div>
+          <div class="client">Governments of Uttarakhand, Tripura, Assam, Maharashtra &amp; Arunachal Pradesh</div>
+          <p class="desc">Secure, workflow-based digital cabinet management system deployed across five State Governments — agenda creation, document circulation, multi-level approvals, and decision tracking enabling fully paperless governance.</p>
+          <div class="tech">
+            <span>ASP.NET · VB.NET · SQL Server</span>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-top">
+            <h3>STEMS Meghalaya</h3>
+            <span class="project-tag">Transport</span>
+          </div>
+          <div class="client">Government of Meghalaya</div>
+          <p class="desc">Smart Transport &amp; Enforcement Management System — route, schedule, and pass management with GPS-based vehicle tracking, online payments, and analytical dashboards for operational monitoring.</p>
+          <div class="tech">
+            <span>ASP.NET · SQL Server · GPS</span>
+            <a href="https://stems-meghalaya.nic.in/" target="_blank" rel="noopener">stems-meghalaya.nic.in <i class="fas fa-arrow-up-right-from-square"></i></a>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-top">
+            <h3>BKTC Portal</h3>
+            <span class="project-tag">Tourism</span>
+          </div>
+          <div class="client">Badrinath-Kedarnath Temple Committee, Govt. of Uttarakhand</div>
+          <p class="desc">Pilgrimage management platform for online puja booking, donations, and accommodation reservations — with payment integration, automated receipts, and MIS reporting tuned for high-volume Char Dham Yatra traffic.</p>
+          <div class="tech">
+            <span>ASP.NET · SQL Server / Oracle</span>
+            <a href="https://badrinath-kedarnath.gov.in/" target="_blank" rel="noopener">badrinath-kedarnath.gov.in <i class="fas fa-arrow-up-right-from-square"></i></a>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-top">
+            <h3>Rajaji Tiger Reserve</h3>
+            <span class="project-tag">Tourism</span>
+          </div>
+          <div class="client">Government of Uttarakhand</div>
+          <p class="desc">Online safari booking and wildlife tourism management — visitor registration, permit generation, payment processing, and admin modules for quota management and operational monitoring.</p>
+          <div class="tech">
+            <span>ASP.NET · SQL Server</span>
+            <a href="https://rajajitigerreserve.uk.gov.in/" target="_blank" rel="noopener">rajajitigerreserve.uk.gov.in <i class="fas fa-arrow-up-right-from-square"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-grid more reveal">
+        <div class="project-mini">
+          <strong>UTC App</strong>
+          <span>Android · Play Store</span>
+        </div>
+        <div class="project-mini">
+          <strong>CTU OBRMS</strong>
+          <span>Chandigarh Transport Undertaking</span>
+        </div>
+        <div class="project-mini">
+          <strong>ANTS Online</strong>
+          <span>Andaman &amp; Nicobar Transport</span>
+        </div>
+        <div class="project-mini">
+          <strong>StarBus JKRTC</strong>
+          <span>J&amp;K Road Transport Corp.</span>
+        </div>
+        <div class="project-mini">
+          <strong>Pathik UTC</strong>
+          <span>Mobile application</span>
+        </div>
+        <div class="project-mini">
+          <strong>UREDA Portal</strong>
+          <span>Renewable energy subsidy</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact-section">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="section-num">06</span>
+        <h2>Contact</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="reveal">
+          <h2>Let's talk about your next project.</h2>
+          <p>Open to opportunities in e-Governance, enterprise application development, and ASP.NET / React-based systems. Reach out by phone or email — I usually respond within a day.</p>
+          <div class="contact-links">
+            <a href="mailto:harshgarcha0@gmail.com"><i class="fas fa-envelope"></i> harshgarcha0@gmail.com</a>
+            <a href="tel:+918791636315"><i class="fas fa-phone"></i> +91 87916 36315</a>
+            <a href="#"><i class="fas fa-location-dot"></i> Dehradun, Uttarakhand, India</a>
+          </div>
+        </div>
+        <div class="contact-card reveal">
+          <div class="row"><span class="k">ROLE</span><span class="v">Software Developer</span></div>
+          <div class="row"><span class="k">EXPERIENCE</span><span class="v">10+ years</span></div>
+          <div class="row"><span class="k">STACK</span><span class="v">ASP.NET · C# · React</span></div>
+          <div class="row"><span class="k">DOMAIN</span><span class="v">e-Governance &amp; transport</span></div>
+          <div class="row"><span class="k">AVAILABILITY</span><span class="v available">Open to opportunities</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  &copy; 2026 Harsh — Software Developer, Dehradun, Uttarakhand
+</footer>
+
+<script>
+  // Mobile nav toggle
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
